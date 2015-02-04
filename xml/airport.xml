@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Response ResponseReference="REF_D_020_84-31-670876778941006"><ResponseDetails Language="en"><SearchAirportResponse><AirportDetails><AirportDetail><City Code="LON"><![CDATA[London]]></City><Airport Code="LGW"><![CDATA[London Gatwick Airport]]></Airport></AirportDetail><AirportDetail><City Code="LON"><![CDATA[London]]></City><Airport Code="LHR"><![CDATA[London Heathrow Airport]]></Airport></AirportDetail></AirportDetails></SearchAirportResponse></ResponseDetails></Response>

@@ -40,6 +40,177 @@ SearchHotelPriceResponse
 					PassengerNameChange客戶姓名變更 - Allowable是否允許 true/false
 -------------------------------------------------------------------------------------------------------------------------
 
+可用XML代碼
+
+$requestData = '<?xml version="1.0" encoding="UTF-8"?>
+<Request>
+	<Source>
+		<RequestorID Client="84" EMailAddress="XML@IHBC.COM.TW" Password="PASS"/>
+		<RequestorPreferences Language="en" Currency="GBP" Country="GB">
+			<RequestMode>SYNCHRONOUS</RequestMode>
+		</RequestorPreferences>
+	</Source>
+	<RequestDetails>
+		<SearchHotelPriceRequest>
+			<ItemDestination DestinationType="city" DestinationCode="LON"/>
+			<ImmediateConfirmationOnly />
+			<PeriodOfStay>
+				<CheckInDate>2015-02-20</CheckInDate>
+				<Duration>2</Duration>
+			</PeriodOfStay>
+			<IncludePriceBreakdown/>
+			<Rooms>
+				<Room Code="db" NumberOfRooms="1"/>
+			</Rooms>
+			<OrderBy>pricelowtohigh</OrderBy>
+			<NumberOfReturnedItems>1</NumberOfReturnedItems>
+		</SearchHotelPriceRequest>
+	</RequestDetails>
+</Request>';
+
+
+/*
+// 找旅館價格******************************************************************************************************************
+		<SearchHotelPriceRequest>
+			<ItemDestination DestinationType="city" DestinationCode="LON"/>
+			<ImmediateConfirmationOnly />
+			<PeriodOfStay>
+				<CheckInDate>2015-02-20</CheckInDate>
+				<Duration>2</Duration>
+			</PeriodOfStay>
+			<IncludePriceBreakdown/>
+			<Rooms>
+				<Room Code="db" NumberOfRooms="1"/>
+			</Rooms>
+			<OrderBy>pricelowtohigh</OrderBy>
+			<NumberOfReturnedItems>1</NumberOfReturnedItems>
+		</SearchHotelPriceRequest>
+		
+// 找所有[國家] 靜態資料******************************************************************************************************************
+		<SearchCountryRequest>
+			<CountryName></CountryName>
+		</SearchCountryRequest>
+
+// 找所有[幣別]	******************************************************************************************************************
+		<SearchCurrencyRequest>
+			<CurrencyName></CurrencyName>
+		</SearchCurrencyRequest>
+		
+// 找所有指定[國家]所有[城市]******************************************************************************************************************
+		<SearchCityRequest CountryCode="GR">
+			<CityName></CityName>
+		</SearchCityRequest>
+// 找所有[區域]******************************************************************************************************************
+		<SearchAreaRequest>
+			<AreaName></AreaName>
+		</SearchAreaRequest>
+// 找所有指定[區域]所有[城市]******************************************************************************************************************
+		<SearchCitiesInAreaRequest AreaCode="ANA">
+			<CityName></CityName>
+		</SearchCitiesInAreaRequest>
+// 找所有Item ******************************************************************************************************************
+// ItemType : apartment(房間) / hotel(旅館) / sightseeing(觀光) / transfer(交通)
+// DestinationType 目標類型 : area / city  - DestinationCode 目標類型代碼 : 
+		<SearchItemRequest ItemType="hotel">
+			<ItemDestination DestinationType="city" DestinationCode="LON" />
+			<ItemName></ItemName>
+		</SearchItemRequest>
+// 找所有 ItemInfomation 詳細資料******************************************************************************************************************
+		<SearchItemInformationRequest ItemType="hotel">
+			<ItemDestination DestinationType="city" DestinationCode="AMS" />
+			<ItemCode></ItemCode>
+		</SearchItemInformationRequest>
+// 找所有 指定[城市]所有[地區] ******************************************************************************************************************
+		<SearchLocationRequest CityCode="HKG" />
+// 找所有 房間類別******************************************************************************************************************
+		<SearchRoomTypeRequest />
+// 找所有 設施******************************************************************************************************************
+		<SearchFacilityRequest FacilityType="hotel" >
+			<FacilityName></FacilityName>
+			<FacilityCode></FacilityCode>
+		</SearchFacilityRequest>
+// 找所有@@@@@@@
+		<SearchSpecialEventRequest>
+			<ItemDestination DestinationType="city" DestinationCode="BLQ" />
+			<DateRange>
+				<FromDate>2004-09-28</FromDate> 
+				<ToDate>2004-10-03</ToDate>
+			</DateRange>
+		</SearchSpecialEventRequest>
+// 找所有 膳食類型******************************************************************************************************************
+		<SearchMealTypeRequest />
+// 找所有 早餐類型******************************************************************************************************************
+		<SearchBreakfastTypeRequest />
+// 找所有 所有連結******************************************************************************************************************
+// LinkType : image/map/flash/richmedia
+		<SearchLinkRequest ItemType="hotel" LinkType="image">
+			<ItemDestination DestinationType="city" DestinationCode="AMS" />
+			<ItemCode>APP</ItemCode>
+		</SearchLinkRequest>
+// 找所有 備註******************************************************************************************************************
+		<SearchRemarkRequest ItemType="hotel">
+		  <RemarkName>arrival</RemarkName> 
+		</SearchRemarkRequest>
+// 找所有 交通轉運清單******************************************************************************************************************
+		<SearchTransferListRequest ListType="TransferLocation">
+		</SearchTransferListRequest>
+// 找指定城市機場******************************************************************************************************************
+		<SearchAirportRequest>
+			<ItemDestination DestinationType="city" DestinationCode="LON" />
+		  <AirportName><![CDATA[at]]></AirportName>
+		</SearchAirportRequest>
+// 找指定城市車站******************************************************************************************************************
+		<SearchStationRequest>
+			<ItemDestination DestinationType="city" DestinationCode="LON" />
+		  <StationName><![CDATA[liv]]></StationName>
+		</SearchStationRequest>
+// 找所有 AOT Number******************************************************************************************************************
+		<SearchAOTNumberRequest>
+			<AssistanceLanguage />
+			<Destination>AU</Destination>
+			<Nationality>GB</Nationality>
+			<ServiceType>hotel</ServiceType>
+		</SearchAOTNumberRequest>
+// 找所有 特價 @@@@@@@@@@
+		<SearchSpecialOfferRequest ItemType="hotel" >
+			<PassengerNationality>GB</PassengerNationality>
+			<Offer>FNT</Offer>
+			<Country>IT</Country>
+			<City>ROM</City>
+			<Item>AMB</Item>
+			<TravelDates>
+				<FromDate>2006-06-01</FromDate>
+				<ToDate>2006-06-30</ToDate>
+			</TravelDates>
+			<EffectiveDate>2006-05-01</EffectiveDate>
+		</SearchSpecialOfferRequest>	
+// 找所有 推薦項目 @@@@@@@
+		<SearchRecommendedItemRequest ItemType="hotel" >
+			<ItemDestination DestinationType="City" DestinationCode="LON" />
+			<Nationality>de</Nationality>
+			<TravelDates>
+				<FromDate>2015-03-20</FromDate>
+				<ToDate>2015-03-28</ToDate>
+			</TravelDates>
+		</SearchRecommendedItemRequest > 
+// 找所有 觀光******************************************************************************************************************
+		<SearchSightseeingTypeRequest/>
+// 找所有 觀光******************************************************************************************************************
+		<SearchSightseeingCategoryRequest/>
+// 找所有 @@@@@@@@@@@
+		<SearchHotelGroupRequest>
+		<ItemDestination DestinationType="city" DestinationCode="lon"/>
+			<ItemName/>
+		</SearchHotelGroupRequest>
+// 項目旅館(只能捉旅館)類別下載 (超慢.....)
+		<ItemInformationDownloadRequest ItemType="hotel">
+		</ItemInformationDownloadRequest>
+// 找所有
+		
+// 找所有
+		
+-------------------------------------------------------------------------------------------------------------------------
+*/
 SimpleXMLElement Object
 (
     [@attributes] => Array

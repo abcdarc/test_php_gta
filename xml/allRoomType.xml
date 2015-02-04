@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Response ResponseReference="REF_D_020_84-23-974573100261554"><ResponseDetails Language="en"><SearchRoomTypeResponse><RoomTypeDetails><RoomType Code="DB"><![CDATA[double]]></RoomType><RoomType Code="Q"><![CDATA[quad]]></RoomType><RoomType Code="SB"><![CDATA[single]]></RoomType><RoomType Code="TB"><![CDATA[twin]]></RoomType><RoomType Code="TR"><![CDATA[triple]]></RoomType><RoomType Code="TS"><![CDATA[twin for sole use]]></RoomType></RoomTypeDetails></SearchRoomTypeResponse></ResponseDetails></Response>
