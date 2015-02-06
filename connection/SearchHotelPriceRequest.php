@@ -128,22 +128,36 @@ $requestData = '<?xml version="1.0" encoding="UTF-8"?>
 		</RequestorPreferences>
 	</Source>
 	<RequestDetails>
-		<SearchHotelPriceRequest>
-			<ItemDestination DestinationType="city" DestinationCode="LON"/>
-			<ImmediateConfirmationOnly />
-			<PeriodOfStay>
-				<CheckInDate>2015-02-20</CheckInDate>
-				<Duration>2</Duration>
-			</PeriodOfStay>
-			<IncludePriceBreakdown/>
-			<Rooms>
-				<Room Code="db" NumberOfRooms="1"/>
-			</Rooms>
-			<OrderBy>pricelowtohigh</OrderBy>
-			<NumberOfReturnedItems>1</NumberOfReturnedItems>
-		</SearchHotelPriceRequest>
+		<AddBookingItemRequest>
+			<BookingReference ReferenceSource="api">1258</BookingReference>
+			<BookingItems>
+				<BookingItem ItemType="hotel">
+					<ItemReference>1</ItemReference>
+					<ItemCity Code="LON" />
+					<Item Code="HEN2" />
+					<ItemRemarks>
+						<ItemRemark Code="LA"/>
+					</ItemRemarks>
+					<HotelItem>
+						<PeriodOfStay>
+							<CheckInDate>2015-03-22</CheckInDate>
+							<CheckOutDate>2015-03-24</CheckOutDate>
+						</PeriodOfStay>
+						<HotelRooms>
+							<HotelRoom Code="DB" Id="001:HEN4:9730:S9464:10852:45030" ExtraBed="false" SharingBedding="false">
+								<PaxIds>
+									<PaxId>1</PaxId>
+									<PaxId>2</PaxId>
+								</PaxIds>
+							</HotelRoom>
+						</HotelRooms>
+					</HotelItem>
+				</BookingItem>
+			</BookingItems>
+		</AddBookingItemRequest>
 	</RequestDetails>
 </Request>';
+
 /*
 // 找旅館價格******************************************************************************************************************
 		<SearchHotelPriceRequest>
@@ -280,8 +294,71 @@ $requestData = '<?xml version="1.0" encoding="UTF-8"?>
 // 項目旅館(只能捉旅館)類別下載 (超慢.....)
 		<ItemInformationDownloadRequest ItemType="hotel">
 		</ItemInformationDownloadRequest>
+// 增加訂房請求
+		<AddBookingRequest>
+			<BookingReference>Booking0002</BookingReference>
+			<PaxNames>
+				<PaxName PaxId="1"><![CDATA[ Mr John Doe]]></PaxName>
+				<PaxName PaxId="2"><![CDATA[ Mrs Sarah Doe]]></PaxName>
+				<PaxName PaxId="3" PaxType="child" ChildAge="11"><![CDATA[ Master Jim Doe]]></PaxName>
+			</PaxNames>
+			<BookingItems>
+				<BookingItem ItemType="hotel">
+					<ItemReference>1</ItemReference>
+					<ItemCity Code="LON"/>
+					<Item Code="HEN2"/>
+					<HotelItem>
+						<PeriodOfStay>
+							<CheckInDate>2015-03-22</CheckInDate>
+							<CheckOutDate>2015-03-24</CheckOutDate>
+						</PeriodOfStay>
+						<HotelRooms>
+							<HotelRoom Code="DB" Id="001:HEN4:9730:S9464:10852:45030" ExtraBed="false" SharingBedding="false">
+								<PaxIds>
+									<PaxId>1</PaxId>
+									<PaxId>2</PaxId>
+								</PaxIds>
+							</HotelRoom>
+						</HotelRooms>
+					</HotelItem>
+				</BookingItem>
+			</BookingItems>
+		</AddBookingRequest>
+// 訂房
+		<AddBookingItemRequest>
+			<BookingReference ReferenceSource="api">1257</BookingReference>
+				<BookingItems>
+					<BookingItem ItemType="hotel">
+						<ItemReference>1</ItemReference>
+						<ItemCity Code="LON" />
+						<Item Code="HEN2" />
+						<ItemRemarks>
+							<ItemRemark Code="LA"/>
+						</ItemRemarks>
+						<HotelItem>
+							<PeriodOfStay>
+								<CheckInDate>2015-03-22</CheckInDate>
+								<CheckOutDate>2015-03-24</CheckOutDate>
+							</PeriodOfStay>
+							<HotelRooms>
+								<HotelRoom Code="DB" Id="001:HEN4:9730:S9464:10852:45030" ExtraBed="false" SharingBedding="false">
+									<PaxIds>
+										<PaxId>1</PaxId>
+										<PaxId>2</PaxId>
+									</PaxIds>
+								</HotelRoom>
+							</HotelRooms>
+						</HotelItem>
+					</BookingItem>
+				</BookingItems>
+		</AddBookingItemRequest>
+
 // 找所有
 		
+
+// 找所有
+		
+
 // 找所有
 		
 
