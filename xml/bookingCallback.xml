@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Response ResponseReference="REF_D_020_84-40-614694746950925" ResponseSequence="1">
+	<ResponseDetails Language="en">
+		<BookingResponse>
+			<BookingReferences>
+				<BookingReference ReferenceSource="client"><![CDATA[Booking0002]]></BookingReference>
+				<BookingReference ReferenceSource="api"><![CDATA[1257]]></BookingReference>
+			</BookingReferences>
+			<BookingCreationDate>2015-02-06</BookingCreationDate>
+			<BookingDepartureDate>2015-03-22</BookingDepartureDate>
+			<BookingName><![CDATA[MR JOHN DOE]]></BookingName>
+			<BookingPrice Commission="0.00" Currency="GBP" Gross="116.50" Nett="116.50"/>
+			<BookingStatus Code="C "><![CDATA[Confirmed or Completed]]></BookingStatus>
+			<PaxNames>
+				<PaxName PaxId="1"><![CDATA[Mr John Doe]]></PaxName>
+				<PaxName PaxId="2"><![CDATA[Mrs Sarah Doe]]></PaxName>
+				<PaxName ChildAge="11" PaxId="3" PaxType="child"><![CDATA[Master Jim Doe]]></PaxName>
+			</PaxNames>
+			<BookingItems>
+				<BookingItem ItemType="hotel">
+					<ItemReference>1</ItemReference>
+					<ItemCity Code="LON"><![CDATA[London]]></ItemCity>
+					<Item Code="HEN2"><![CDATA[Hendon Hall]]></Item>
+					<ItemPrice Commission="0.00" Currency="GBP" Gross="116.50" Nett="116.50"/>
+					<ItemStatus Code="C "><![CDATA[Confirmed or Completed]]></ItemStatus>
+					<ItemConfirmationReference>AAKF015229 - 020/1257</ItemConfirmationReference>
+					<HotelItem>
+						<PeriodOfStay>
+							<CheckInDate>2015-03-22</CheckInDate>
+							<CheckOutDate>2015-03-24</CheckOutDate>
+						</PeriodOfStay>
+						<HotelRooms>
+							<HotelRoom Code="DB" Id="001:HEN4:9730:S9464:10852:45030">
+							<Description><![CDATA[Standard Room]]></Description>
+							<PaxIds>
+							<PaxId>1</PaxId>
+							<PaxId>2</PaxId>
+							</PaxIds>
+							</HotelRoom>
+						</HotelRooms>
+						<Meals>
+							<Basis Code="N"><![CDATA[None]]></Basis>
+						</Meals>
+					</HotelItem>
+					<ChargeConditions>
+						<ChargeCondition Type="cancellation">
+							<Condition Charge="true" ChargeAmount="116.50" Currency="GBP" FromDate="2015-03-22"/>
+						</ChargeCondition>
+						<ChargeCondition MaximumPossibleChargesShown="true" Type="amendment">
+							<Condition Charge="true" ChargeAmount="116.50" Currency="GBP" FromDate="2015-03-22" ToDate="2015-03-20"/>
+							<Condition Charge="true" ChargeAmount="58.25" Currency="GBP" FromDate="2015-03-19" ToDate="2015-03-17"/>
+							<Condition Charge="false" FromDate="2015-03-16"/>
+						</ChargeCondition>
+						<PassengerNameChange Allowable="true"/>
+					</ChargeConditions>
+				</BookingItem>
+			</BookingItems>
+		</BookingResponse>
+	</ResponseDetails>
+</Response>
